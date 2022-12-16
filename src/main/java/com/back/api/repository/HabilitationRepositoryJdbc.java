@@ -16,24 +16,7 @@ public class HabilitationRepositoryJdbc implements HabilitationRepository{
 
     @Override
     public int saveHabilitation(HabilitationModel habilitationModel) {
-        return jdbcTemplate.update("INSERT INTO habilitations (habDateDebut, habDateFin, statusDebut, statusFin, habCaisse, persCodeExp, typeHabCode, etabCode, supportCode, roleFonction) VALUES(?,?,?,?,?,?,?,?,?,?)",
-                new Object[]{
-                        habilitationModel.getHabDateDebut(),
-                        habilitationModel.getHabDateFin(),
-                        habilitationModel.isStatusDebut(),
-                        habilitationModel.isStatusFin(),
-                        habilitationModel.getHabCaisse(),
-                        habilitationModel.getPersCodeExp(),
-                        habilitationModel.getTypeHabCode(),
-                        habilitationModel.getEtabCode(),
-                        habilitationModel.getSupportCode(),
-                        habilitationModel.getRoleFonction()
-                });
-    }
-
-    @Override
-    public int updateHabilitation(HabilitationModel habilitationModel) {
-        return jdbcTemplate.update("UPDATE habilitations SET habDateDebut = ?, habDateFin = ?, statusDebut = ?, statusFin = ?, habCaisse = ?, persCodeExp = ?, typeHabCode = ?, etabCode = ?, supportCode = ?, roleFonction = ? WHERE habId = ?",
+        return jdbcTemplate.update("INSERT INTO habilitations (habDateDebut, habDateFin, statusDebut, statusFin, habCaisse, persCodeExp, typeHabCode, etabCode, supportCode, roleFonction, foncInterim) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
                 new Object[]{
                         habilitationModel.getHabDateDebut(),
                         habilitationModel.getHabDateFin(),
@@ -45,6 +28,25 @@ public class HabilitationRepositoryJdbc implements HabilitationRepository{
                         habilitationModel.getEtabCode(),
                         habilitationModel.getSupportCode(),
                         habilitationModel.getRoleFonction(),
+                        habilitationModel.getFoncInterim()
+                });
+    }
+
+    @Override
+    public int updateHabilitation(HabilitationModel habilitationModel) {
+        return jdbcTemplate.update("UPDATE habilitations SET habDateDebut = ?, habDateFin = ?, statusDebut = ?, statusFin = ?, habCaisse = ?, persCodeExp = ?, typeHabCode = ?, etabCode = ?, supportCode = ?, roleFonction = ?, foncIterim = ? WHERE habId = ?",
+                new Object[]{
+                        habilitationModel.getHabDateDebut(),
+                        habilitationModel.getHabDateFin(),
+                        habilitationModel.isStatusDebut(),
+                        habilitationModel.isStatusFin(),
+                        habilitationModel.getHabCaisse(),
+                        habilitationModel.getPersCodeExp(),
+                        habilitationModel.getTypeHabCode(),
+                        habilitationModel.getEtabCode(),
+                        habilitationModel.getSupportCode(),
+                        habilitationModel.getRoleFonction(),
+                        habilitationModel.getFoncInterim(),
                         habilitationModel.getHabId()
                 });
     }
@@ -73,6 +75,12 @@ public class HabilitationRepositoryJdbc implements HabilitationRepository{
     @Override
     public List<HabilitationModel> getAllHabilitations() {
         return jdbcTemplate.query("SELECT * FROM habilitations",
+                BeanPropertyRowMapper.newInstance(HabilitationModel.class));
+    }
+
+    @Override
+    public List<HabilitationModel> getRapportFin() {
+        return jdbcTemplate.query("SELECT * FROM vHabilitations",
                 BeanPropertyRowMapper.newInstance(HabilitationModel.class));
     }
 }

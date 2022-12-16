@@ -15,7 +15,7 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
 
     @Override
     public int savePersonnel(PersonnelModel personnel) {
-        return jdbcTemplate.update("INSERT INTO personnels (persCodeExp, persNom, persPrenom, persLogin, persMat, persCIN, persNumTel, persEmail) VALUES(?,?,?,?,?,?,?,?)",
+        return jdbcTemplate.update("INSERT INTO personnels (persCodeExp, persNom, persPrenom, persLogin, persMat, persCIN, persNumTel, persEmail, roleId) VALUES(?,?,?,?,?,?,?,?,(SELECT roleId FROM roles WHERE roleFonction=?))",
                 new Object[]{
                         personnel.getPersCodeExp(),
                         personnel.getPersNom(),
@@ -24,7 +24,8 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
                         personnel.getPersMat(),
                         personnel.getPersCIN(),
                         personnel.getPersNumTel(),
-                        personnel.getPersEmail()
+                        personnel.getPersEmail(),
+                        personnel.getRoleId()
                 });
     }
 
@@ -41,7 +42,7 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
                         personnel.getPersNumTel(),
                         personnel.getPersEmail(),
                         personnel.getPersId()
-                });
+                }); 
     }
 
     @Override
@@ -62,7 +63,7 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
 
     @Override
     public List<PersonnelModel> getPersonnels() {
-        return jdbcTemplate.query("SELECT * FROM personnels",
+        return jdbcTemplate.query("SELECT * FROM personnels ",
                 BeanPropertyRowMapper.newInstance(PersonnelModel.class));
     }
 }

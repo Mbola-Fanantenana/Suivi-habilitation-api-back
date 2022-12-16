@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin("http://localhost:3000/")
 public class SupportController {
     @Autowired
     SupportRepository supportRepository;

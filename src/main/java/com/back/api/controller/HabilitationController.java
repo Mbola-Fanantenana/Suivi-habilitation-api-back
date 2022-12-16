@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin("http://localhost:3000/")
 public class HabilitationController {
     @Autowired
     HabilitationRepository habilitationRepository;
@@ -16,6 +17,11 @@ public class HabilitationController {
     @GetMapping("/habilitations")
     public List<HabilitationModel> getAllHabilitations() {
         return habilitationRepository.getAllHabilitations();
+    }
+
+    @GetMapping("/vHabilitations")
+    public List<HabilitationModel> getRapportHabilitation() {
+        return habilitationRepository.getRapportFin();
     }
 
     @GetMapping("/habilitation/{habId}")
@@ -42,6 +48,7 @@ public class HabilitationController {
         habilitationModel1.setEtabCode(habilitationModel.getEtabCode());
         habilitationModel1.setSupportCode(habilitationModel.getSupportCode());
         habilitationModel1.setRoleFonction(habilitationModel.getRoleFonction());
+        habilitationModel1.setFoncInterim(habilitationModel.getFoncInterim());
 
         return habilitationRepository.updateHabilitation(habilitationModel1);
     }

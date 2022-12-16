@@ -11,4 +11,5 @@ public interface PersonnelRepository {
     int deletePersonnel(Long persId);
     int deletePersonnels();
     List<PersonnelModel> getPersonnels();
+    //List<PersonnelModel> getPersRoles();
 }

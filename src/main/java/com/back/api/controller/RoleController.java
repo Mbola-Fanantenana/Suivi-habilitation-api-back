@@ -7,11 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.management.relation.Role;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin("http://localhost:3000/")
 public class RoleController {
 
     @Autowired
@@ -19,7 +19,7 @@ public class RoleController {
 
     @GetMapping("/roles")
     public List<RoleModel> getAllRoles() {
-        return roleRepository.getRoles();
+         return roleRepository.getRoles();
     }
 
     @GetMapping("/role/{roleId}")

@@ -11,4 +11,5 @@ public interface HabilitationRepository {
     int deleteHabilitation(Long habId);
     int deleteAllHabilitations();
     List<HabilitationModel> getAllHabilitations();
+    List<HabilitationModel> getRapportFin();
 }

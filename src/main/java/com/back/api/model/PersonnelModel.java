@@ -11,12 +11,13 @@ public class PersonnelModel {
     private Long persCIN;
     private Long persNumTel;
     private String persEmail;
+    private Long roleId;
 
     public PersonnelModel() {
 
     }
 
-    public PersonnelModel(Long persId, String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail) {
+    public PersonnelModel(Long persId, String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail, Long roleId) {
         this.persId = persId;
         this.persCodeExp = persCodeExp;
         this.persNom = persNom;
@@ -26,9 +27,10 @@ public class PersonnelModel {
         this.persCIN = persCIN;
         this.persNumTel = persNumTel;
         this.persEmail = persEmail;
+        this.roleId = roleId;
     }
 
-    public PersonnelModel(String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail) {
+    public PersonnelModel(String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail, Long roleId) {
         this.persCodeExp = persCodeExp;
         this.persNom = persNom;
         this.persPrenom = persPrenom;
@@ -37,6 +39,7 @@ public class PersonnelModel {
         this.persCIN = persCIN;
         this.persNumTel = persNumTel;
         this.persEmail = persEmail;
+        this.roleId = roleId;
     }
 
     public Long getPersId() {
@@ -109,5 +112,13 @@ public class PersonnelModel {
 
     public void setPersEmail(String persEmail) {
         this.persEmail = persEmail;
+    }
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
     }
 }

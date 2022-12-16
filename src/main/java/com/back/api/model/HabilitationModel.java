@@ -13,12 +13,13 @@ public class HabilitationModel {
     private String etabCode;
     private String supportCode;
     private String roleFonction;
+    private String foncInterim;
 
     private HabilitationModel() {
 
     }
 
-    public HabilitationModel(Long habId, Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String persCodeExp, String typeHabCode, String etabCode, String supportCode, String roleFonction) {
+    public HabilitationModel(Long habId, Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String persCodeExp, String typeHabCode, String etabCode, String supportCode, String roleFonction, String foncInterim) {
         this.habId = habId;
         this.habDateDebut = habDateDebut;
         this.habDateFin = habDateFin;
@@ -30,9 +31,10 @@ public class HabilitationModel {
         this.etabCode = etabCode;
         this.supportCode = supportCode;
         this.roleFonction = roleFonction;
+        this.foncInterim = foncInterim;
     }
 
-    public HabilitationModel(Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String persCodeExp, String typeHabCode, String etabCode, String supportCode, String roleFonction) {
+    public HabilitationModel(Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String persCodeExp, String typeHabCode, String etabCode, String supportCode, String roleFonction, String foncInterim) {
         this.habDateDebut = habDateDebut;
         this.habDateFin = habDateFin;
         this.statusDebut = statusDebut;
@@ -43,6 +45,7 @@ public class HabilitationModel {
         this.etabCode = etabCode;
         this.supportCode = supportCode;
         this.roleFonction = roleFonction;
+        this.foncInterim = foncInterim;
     }
 
     public Long getHabId() {
@@ -131,5 +134,13 @@ public class HabilitationModel {
 
     public void setRoleFonction(String roleFonction) {
         this.roleFonction = roleFonction;
+    }
+
+    public String getFoncInterim() {
+        return foncInterim;
+    }
+
+    public void setFoncInterim(String foncInterim) {
+        this.foncInterim = foncInterim;
     }
 }

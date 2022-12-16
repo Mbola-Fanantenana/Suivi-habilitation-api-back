@@ -56,7 +56,7 @@ public class EtablissementRepositoryJdbc implements EtablissementRepository{
 
     @Override
     public List<EtablissementModel> getAllEtab() {
-        return jdbcTemplate.query("SELECT * FROM etablissements",
+        return jdbcTemplate.query("SELECT * FROM etablissements ORDER BY etabCode ASC",
                 BeanPropertyRowMapper.newInstance(EtablissementModel.class));
     }
 }
