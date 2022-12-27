@@ -26,7 +26,7 @@ public class EtablissementController {
 
     @PostMapping("/saveEtablissement")
     public int saveEtablissement(@RequestBody EtablissementModel etabModel) {
-        return etablissementRepository.saveEtab(etabModel);
+            return etablissementRepository.saveEtab(etabModel);
     }
 
     @PutMapping("/updateEtablissement/{etabId}")

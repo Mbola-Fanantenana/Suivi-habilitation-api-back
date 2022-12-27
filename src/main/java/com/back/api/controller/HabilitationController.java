@@ -24,6 +24,7 @@ public class HabilitationController {
         return habilitationRepository.getRapportFin();
     }
 
+
     @GetMapping("/habilitation/{habId}")
     public HabilitationModel getHabById(@PathVariable("habId") Long habId) {
         return habilitationRepository.getHabById(habId);

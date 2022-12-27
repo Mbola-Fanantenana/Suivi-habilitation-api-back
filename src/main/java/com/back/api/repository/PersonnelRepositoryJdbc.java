@@ -15,7 +15,10 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
 
     @Override
     public int savePersonnel(PersonnelModel personnel) {
-        return jdbcTemplate.update("INSERT INTO personnels (persCodeExp, persNom, persPrenom, persLogin, persMat, persCIN, persNumTel, persEmail, roleId) VALUES(?,?,?,?,?,?,?,?,(SELECT roleId FROM roles WHERE roleFonction=?))",
+        return jdbcTemplate.update("INSERT INTO " +
+                        "personnels (persCodeExp, persNom, persPrenom, persLogin, " +
+                        "persMat, persCIN, persNumTel, persEmail, roleId) " +
+                        "VALUES(?,?,?,?,?,?,?,?,(SELECT roleId FROM roles WHERE roleFonction=?))",
                 new Object[]{
                         personnel.getPersCodeExp(),
                         personnel.getPersNom(),
@@ -31,7 +34,10 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
 
     @Override
     public int updatePersonnel(PersonnelModel personnel) {
-        return jdbcTemplate.update("UPDATE personnels SET persCodeExp = ?, persNom = ?, persPrenom = ?, persLogin = ?, persMat = ?, persCIN = ?, persNumTel = ?, persEmail = ? WHERE persId = ?",
+        return jdbcTemplate.update("UPDATE personnels " +
+                        "SET persCodeExp = ?, persNom = ?, persPrenom = ?, persLogin = ?, " +
+                        "persMat = ?, persCIN = ?, persNumTel = ?, persEmail = ? " +
+                        "WHERE persId = ?",
                 new Object[]{
                         personnel.getPersCodeExp(),
                         personnel.getPersNom(),
