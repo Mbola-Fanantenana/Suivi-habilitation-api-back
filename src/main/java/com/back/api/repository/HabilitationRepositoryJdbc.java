@@ -80,15 +80,8 @@ public class HabilitationRepositoryJdbc implements HabilitationRepository{
 
     @Override
     public List<HabilitationModel> getRapportFin() {
-        return jdbcTemplate.query("SELECT * FROM vHabilitation",
+        return jdbcTemplate.query("SELECT * FROM vHabilitation ORDER BY persCodeExp ASC",
                 BeanPropertyRowMapper.newInstance(HabilitationModel.class));
     }
-/*
-    @Override
-    public List<HabilitationModel> getTotalHabilitation() {
-        return jdbcTemplate.query("SELECT total FROM vtotal",
-                BeanPropertyRowMapper.newInstance(HabilitationModel.class));
-    }
-*/
 
 }

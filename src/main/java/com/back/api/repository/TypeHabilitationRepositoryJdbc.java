@@ -50,7 +50,7 @@ public class TypeHabilitationRepositoryJdbc implements TypeHabilitationRepositor
     }
 
     public List<TypeHabilitationModel> getAllTypes() {
-        return jdbcTemplate.query("SELECT * FROM typeHabilitations",
+        return jdbcTemplate.query("SELECT * FROM typeHabilitations ORDER BY typeHabId ASC",
                 BeanPropertyRowMapper.newInstance(TypeHabilitationModel.class));
     }
 }

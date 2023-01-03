@@ -53,7 +53,7 @@ public class RoleRepositoryJdbc implements RoleRepository {
 
     @Override
     public List<RoleModel> getRoles() {
-        return jdbcTemplate.query("SELECT * FROM roles ORDER BY roleId",
+        return jdbcTemplate.query("SELECT * FROM roles ORDER BY roleId ASC",
                 BeanPropertyRowMapper.newInstance(RoleModel.class));
     }
 

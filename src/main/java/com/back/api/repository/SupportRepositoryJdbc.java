@@ -56,7 +56,7 @@ public class SupportRepositoryJdbc implements SupportRepository {
 
     @Override
     public List<SupportModel> getSupports() {
-        return jdbcTemplate.query("SELECT * FROM supports",
+        return jdbcTemplate.query("SELECT * FROM supports ORDER BY supportId ASC",
                 BeanPropertyRowMapper.newInstance(SupportModel.class));
     }
 }

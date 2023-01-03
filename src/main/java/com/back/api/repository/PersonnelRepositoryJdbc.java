@@ -18,7 +18,7 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
         return jdbcTemplate.update("INSERT INTO " +
                         "personnels (persCodeExp, persNom, persPrenom, persLogin, " +
                         "persMat, persCIN, persNumTel, persEmail, roleId) " +
-                        "VALUES(?,?,?,?,?,?,?,?,(SELECT roleId FROM roles WHERE roleFonction=?))",
+                        "VALUES(?,?,?,?,?,?,?,?,(SELECT roleId FROM roles WHERE roleId=?))",
                 new Object[]{
                         personnel.getPersCodeExp(),
                         personnel.getPersNom(),
@@ -69,7 +69,7 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
 
     @Override
     public List<PersonnelModel> getPersonnels() {
-        return jdbcTemplate.query("SELECT * FROM personnels ",
+        return jdbcTemplate.query("SELECT * FROM personnels ORDER BY persCodeExp ASC ",
                 BeanPropertyRowMapper.newInstance(PersonnelModel.class));
     }
 }
