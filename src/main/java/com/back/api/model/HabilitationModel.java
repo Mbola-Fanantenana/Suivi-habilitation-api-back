@@ -8,9 +8,11 @@ public class HabilitationModel {
     private boolean statusDebut;
     private boolean statusFin;
     private String habCaisse;
+    private String habCaisseSortant;
     private String persCodeExp;
     private String typeHabCode;
     private String etabCode;
+    private String etabCodeSortant;
     private String supportCode;
     private String roleFonction;
     private String foncInterim;
@@ -19,13 +21,15 @@ public class HabilitationModel {
 
     }
 
-    public HabilitationModel(Long habId, Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String persCodeExp, String typeHabCode, String etabCode, String supportCode, String roleFonction, String foncInterim) {
+    public HabilitationModel(Long habId, Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String habCaisseSortant, String persCodeExp, String typeHabCode, String etabCode, String etabCodeSortant, String supportCode, String roleFonction, String foncInterim) {
         this.habId = habId;
         this.habDateDebut = habDateDebut;
         this.habDateFin = habDateFin;
         this.statusDebut = statusDebut;
         this.statusFin = statusFin;
         this.habCaisse = habCaisse;
+        this.etabCodeSortant = etabCodeSortant;
+        this.habCaisseSortant = habCaisseSortant;
         this.persCodeExp = persCodeExp;
         this.typeHabCode = typeHabCode;
         this.etabCode = etabCode;
@@ -34,15 +38,17 @@ public class HabilitationModel {
         this.foncInterim = foncInterim;
     }
 
-    public HabilitationModel(Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String persCodeExp, String typeHabCode, String etabCode, String supportCode, String roleFonction, String foncInterim) {
+    public HabilitationModel(Date habDateDebut, Date habDateFin, boolean statusDebut, boolean statusFin, String habCaisse, String habCaisseSortant, String persCodeExp, String typeHabCode, String etabCode, String etabCodeSortant, String supportCode, String roleFonction, String foncInterim) {
         this.habDateDebut = habDateDebut;
         this.habDateFin = habDateFin;
         this.statusDebut = statusDebut;
         this.statusFin = statusFin;
         this.habCaisse = habCaisse;
+        this.habCaisseSortant = habCaisseSortant;
         this.persCodeExp = persCodeExp;
         this.typeHabCode = typeHabCode;
         this.etabCode = etabCode;
+        this.etabCodeSortant = etabCodeSortant;
         this.supportCode = supportCode;
         this.roleFonction = roleFonction;
         this.foncInterim = foncInterim;
@@ -96,6 +102,14 @@ public class HabilitationModel {
         this.habCaisse = habCaisse;
     }
 
+    public String getHabCaisseSortant() {
+        return habCaisseSortant;
+    }
+
+    public void setHabCaisseSortant(String habCaisseSortant) {
+        this.habCaisseSortant = habCaisseSortant;
+    }
+
     public String getPersCodeExp() {
         return persCodeExp;
     }
@@ -118,6 +132,14 @@ public class HabilitationModel {
 
     public void setEtabCode(String etabCode) {
         this.etabCode = etabCode;
+    }
+
+    public String getEtabCodeSortant() {
+        return etabCodeSortant;
+    }
+
+    public void setEtabCodeSortant(String etabCodeSortant) {
+        this.etabCodeSortant = etabCodeSortant;
     }
 
     public String getSupportCode() {

@@ -4,21 +4,21 @@ public class RoleModel {
 
     private Long roleId;
     private String roleFonction;
-    private String roleLieu;
+    private String roleDesc;
 
     public RoleModel() {
 
     }
 
-    public RoleModel(long roleId, String roleFonction, String roleLieu) {
+    public RoleModel(long roleId, String roleFonction, String roleDesc) {
         this.roleId = roleId;
         this.roleFonction = roleFonction;
-        this.roleLieu = roleLieu;
+        this.roleDesc = roleDesc;
     }
 
-    public RoleModel(String roleFonction, String roleLieu) {
+    public RoleModel(String roleFonction, String roleDesc) {
         this.roleFonction = roleFonction;
-        this.roleLieu = roleLieu;
+        this.roleDesc = roleDesc;
     }
 
     public Long getRoleId() {
@@ -37,11 +37,11 @@ public class RoleModel {
         this.roleFonction = roleFonction;
     }
 
-    public String getRoleLieu() {
-        return roleLieu;
+    public String getRoleDesc() {
+        return roleDesc;
     }
 
-    public void setRoleLieu(String roleLieu) {
-        this.roleLieu = roleLieu;
+    public void setRoleDesc(String roleDesc) {
+        this.roleDesc = roleDesc;
     }
 }

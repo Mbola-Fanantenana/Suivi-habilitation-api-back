@@ -17,19 +17,19 @@ public class RoleRepositoryJdbc implements RoleRepository {
 
     @Override
     public int saveRole(RoleModel model) {
-        return jdbcTemplate.update("INSERT INTO roles (roleFonction, roleLieu) VALUES(?,?)",
+        return jdbcTemplate.update("INSERT INTO roles (roleFonction, roleDesc) VALUES(?,?)",
                 new Object[]{
                         model.getRoleFonction(),
-                        model.getRoleLieu()
+                        model.getRoleDesc()
                 });
     }
 
     @Override
     public int updateRole(RoleModel roleModel) {
-        return jdbcTemplate.update("UPDATE roles SET roleFonction = ?, roleLieu = ? WHERE roleId = ?",
+        return jdbcTemplate.update("UPDATE roles SET roleFonction = ?, roleDesc = ? WHERE roleId = ?",
                 new Object[]{
                         roleModel.getRoleFonction(),
-                        roleModel.getRoleLieu(),
+                        roleModel.getRoleDesc(),
                         roleModel.getRoleId()
                 });
     }

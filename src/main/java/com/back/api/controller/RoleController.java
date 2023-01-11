@@ -39,7 +39,7 @@ public class RoleController {
         if (role != null) {
             role.setRoleId(roleId);
             role.setRoleFonction(roleModel.getRoleFonction());
-            role.setRoleLieu(roleModel.getRoleLieu());
+            role.setRoleDesc(roleModel.getRoleDesc());
 
             roleRepository.updateRole(role);
             return new ResponseEntity<>("Role was updated successfully", HttpStatus.OK);

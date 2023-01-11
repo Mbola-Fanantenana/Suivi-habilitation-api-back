@@ -44,9 +44,11 @@ public class HabilitationController {
         habilitationModel1.setStatusDebut(habilitationModel.isStatusDebut());
         habilitationModel1.setStatusFin(habilitationModel.isStatusFin());
         habilitationModel1.setHabCaisse(habilitationModel.getHabCaisse());
+        habilitationModel1.setHabCaisseSortant(habilitationModel.getHabCaisseSortant());
         habilitationModel1.setPersCodeExp(habilitationModel.getPersCodeExp());
         habilitationModel1.setTypeHabCode(habilitationModel.getTypeHabCode());
         habilitationModel1.setEtabCode(habilitationModel.getEtabCode());
+        habilitationModel1.setEtabCodeSortant(habilitationModel.getEtabCodeSortant());
         habilitationModel1.setSupportCode(habilitationModel.getSupportCode());
         habilitationModel1.setRoleFonction(habilitationModel.getRoleFonction());
         habilitationModel1.setFoncInterim(habilitationModel.getFoncInterim());

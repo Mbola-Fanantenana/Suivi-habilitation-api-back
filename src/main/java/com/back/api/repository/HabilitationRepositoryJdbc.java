@@ -16,16 +16,18 @@ public class HabilitationRepositoryJdbc implements HabilitationRepository{
 
     @Override
     public int saveHabilitation(HabilitationModel habilitationModel) {
-        return jdbcTemplate.update("INSERT INTO habilitations (habDateDebut, habDateFin, statusDebut, statusFin, habCaisse, persCodeExp, typeHabCode, etabCode, supportCode, roleFonction, foncInterim) VALUES(?,?,?,?,?,?,?,?,?,?,?)",
+        return jdbcTemplate.update("INSERT INTO habilitations (habDateDebut, habDateFin, statusDebut, statusFin, habCaisse, habCaisseSortant, persCodeExp, typeHabCode, etabCode, etabCodeSortant, supportCode, roleFonction, foncInterim) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 new Object[]{
                         habilitationModel.getHabDateDebut(),
                         habilitationModel.getHabDateFin(),
                         habilitationModel.isStatusDebut(),
                         habilitationModel.isStatusFin(),
                         habilitationModel.getHabCaisse(),
+                        habilitationModel.getHabCaisseSortant(),
                         habilitationModel.getPersCodeExp(),
                         habilitationModel.getTypeHabCode(),
                         habilitationModel.getEtabCode(),
+                        habilitationModel.getEtabCodeSortant(),
                         habilitationModel.getSupportCode(),
                         habilitationModel.getRoleFonction(),
                         habilitationModel.getFoncInterim()
@@ -34,16 +36,18 @@ public class HabilitationRepositoryJdbc implements HabilitationRepository{
 
     @Override
     public int updateHabilitation(HabilitationModel habilitationModel) {
-        return jdbcTemplate.update("UPDATE habilitations SET habDateDebut = ?, habDateFin = ?, statusDebut = ?, statusFin = ?, habCaisse = ?, persCodeExp = ?, typeHabCode = ?, etabCode = ?, supportCode = ?, roleFonction = ?, foncIterim = ? WHERE habId = ?",
+        return jdbcTemplate.update("UPDATE habilitations SET habDateDebut = ?, habDateFin = ?, statusDebut = ?, statusFin = ?, habCaisse = ?, habCaisseSortant = ?, persCodeExp = ?, typeHabCode = ?, etabCode = ?, etabCodeSortant = ?, supportCode = ?, roleFonction = ?, foncInterim = ? WHERE habId = ?",
                 new Object[]{
                         habilitationModel.getHabDateDebut(),
                         habilitationModel.getHabDateFin(),
                         habilitationModel.isStatusDebut(),
                         habilitationModel.isStatusFin(),
                         habilitationModel.getHabCaisse(),
+                        habilitationModel.getHabCaisseSortant(),
                         habilitationModel.getPersCodeExp(),
                         habilitationModel.getTypeHabCode(),
                         habilitationModel.getEtabCode(),
+                        habilitationModel.getEtabCodeSortant(),
                         habilitationModel.getSupportCode(),
                         habilitationModel.getRoleFonction(),
                         habilitationModel.getFoncInterim(),
