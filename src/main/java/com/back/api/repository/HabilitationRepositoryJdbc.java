@@ -87,5 +87,4 @@ public class HabilitationRepositoryJdbc implements HabilitationRepository{
         return jdbcTemplate.query("SELECT * FROM vHabilitation ORDER BY persCodeExp ASC",
                 BeanPropertyRowMapper.newInstance(HabilitationModel.class));
     }
-
 }

@@ -17,8 +17,8 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
     public int savePersonnel(PersonnelModel personnel) {
         return jdbcTemplate.update("INSERT INTO " +
                         "personnels (persCodeExp, persNom, persPrenom, persLogin, " +
-                        "persMat, persCIN, persNumTel, persEmail, roleId) " +
-                        "VALUES(?,?,?,?,?,?,?,?,(SELECT roleId FROM roles WHERE roleId=?))",
+                        "persMat, persCIN, persNumTel, persEmail, fonction) " +
+                        "VALUES(?,?,?,?,?,?,?,?,?)",
                 new Object[]{
                         personnel.getPersCodeExp(),
                         personnel.getPersNom(),
@@ -28,16 +28,13 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
                         personnel.getPersCIN(),
                         personnel.getPersNumTel(),
                         personnel.getPersEmail(),
-                        personnel.getRoleId()
+                        personnel.getFonction()
                 });
     }
 
     @Override
     public int updatePersonnel(PersonnelModel personnel) {
-        return jdbcTemplate.update("UPDATE personnels " +
-                        "SET persCodeExp = ?, persNom = ?, persPrenom = ?, persLogin = ?, " +
-                        "persMat = ?, persCIN = ?, persNumTel = ?, persEmail = ? " +
-                        "WHERE persId = ?",
+        return jdbcTemplate.update("UPDATE personnels SET persCodeExp = ?, persNom = ?, persPrenom = ?, persLogin = ?, persMat = ?, persCIN = ?, persNumTel = ?, persEmail = ?, fonction = ? WHERE persId = ?",
                 new Object[]{
                         personnel.getPersCodeExp(),
                         personnel.getPersNom(),
@@ -47,7 +44,8 @@ public class PersonnelRepositoryJdbc implements PersonnelRepository {
                         personnel.getPersCIN(),
                         personnel.getPersNumTel(),
                         personnel.getPersEmail(),
-                        personnel.getPersId()
+                        personnel.getFonction(),
+                        personnel.getPersId(),
                 }); 
     }
 

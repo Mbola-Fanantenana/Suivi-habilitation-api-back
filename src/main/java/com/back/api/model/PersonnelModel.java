@@ -11,13 +11,13 @@ public class PersonnelModel {
     private Long persCIN;
     private Long persNumTel;
     private String persEmail;
-    private Long roleId;
+    private String fonction;
 
     public PersonnelModel() {
 
     }
 
-    public PersonnelModel(Long persId, String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail, Long roleId) {
+    public PersonnelModel(Long persId, String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail, String fonction) {
         this.persId = persId;
         this.persCodeExp = persCodeExp;
         this.persNom = persNom;
@@ -27,10 +27,10 @@ public class PersonnelModel {
         this.persCIN = persCIN;
         this.persNumTel = persNumTel;
         this.persEmail = persEmail;
-        this.roleId = roleId;
+        this.fonction = fonction;
     }
 
-    public PersonnelModel(String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail, Long roleId) {
+    public PersonnelModel(String persCodeExp, String persNom, String persPrenom, String persLogin, String persMat, Long persCIN, Long persNumTel, String persEmail, String fonction) {
         this.persCodeExp = persCodeExp;
         this.persNom = persNom;
         this.persPrenom = persPrenom;
@@ -39,7 +39,7 @@ public class PersonnelModel {
         this.persCIN = persCIN;
         this.persNumTel = persNumTel;
         this.persEmail = persEmail;
-        this.roleId = roleId;
+        this.fonction = fonction;
     }
 
     public Long getPersId() {
@@ -114,11 +114,11 @@ public class PersonnelModel {
         this.persEmail = persEmail;
     }
 
-    public Long getRoleId() {
-        return roleId;
+    public String getFonction() {
+        return fonction;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    public void setFonction(String fonction) {
+        this.fonction = fonction;
     }
 }
