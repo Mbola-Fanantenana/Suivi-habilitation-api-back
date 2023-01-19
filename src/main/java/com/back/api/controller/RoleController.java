@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin("http://localhost:3000/")
+@CrossOrigin("https://localhost:3000/")
 public class RoleController {
 
     @Autowired
